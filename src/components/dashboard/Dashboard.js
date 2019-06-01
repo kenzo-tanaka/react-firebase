@@ -39,11 +39,13 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect([
     {
-      collection: "projects" // @@ Connect with Firebase collection
+      collection: "projects", // @@ Connect with Firebase collection
+      orderBy: ["createdAt", "desc"]
     },
     {
       collection: "notifications",
-      limit: 3
+      limit: 3,
+      orderBy: ["time", "desc"]
     }
   ])
 )(Dashboard);
