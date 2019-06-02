@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import { connect } from "react-redux";
+// add fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = props => {
   const { auth, profile } = props;
@@ -16,7 +19,7 @@ const Navbar = props => {
       <nav className="nav-wrapper grey darken-3">
         <div className="container">
           <Link to="/" className="brand-logo">
-            MarioPlan
+            <FontAwesomeIcon icon={faHome} />
           </Link>
           {links}
         </div>
